@@ -56,7 +56,6 @@ public class main {
             System.out.println("2 - Funcionário");
             System.out.println("0 - Finalizar Programa.");
             option = sc.nextInt();
-            System.out.println("\n\n\n");
         }
     }
 }

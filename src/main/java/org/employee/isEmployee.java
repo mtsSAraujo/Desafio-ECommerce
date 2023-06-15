@@ -40,7 +40,7 @@ public class isEmployee {
                         showDB(st);
                         System.out.println("Deseja voltar ao menu anterior? (Digite qualquer coisa)");
                         sair = sc.next();
-                        if(sair.equals(1)){
+                        if(sair.equals("1")){
                             sair = "2";
                         }
                     }

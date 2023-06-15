@@ -20,7 +20,7 @@ public class addOnDB {
         try{
 
             st = conn.prepareStatement("INSERT INTO products "
-                    + "(product_name, product_price, quantity)"
+                    + "(product_name, product_price, quantity) "
                     + "VALUES "
                     + "(?, ?, ?)");
 
@@ -35,9 +35,12 @@ public class addOnDB {
                 int quantity = sc.nextInt();
                 st.setInt(3, quantity);
                 System.out.println("Deseja cadastrar outro produto?"
-                    + "Digite:\n1 - Para Sim\n2 - Para Não");
+                    + "\nDigite:\n1 - Para Sim\n2 - Para Não");
                 cont = sc.nextInt();
+
             }
+            int rowsAffected = st.executeUpdate();
+            System.out.println("Feito! Produtos adicionados: " + rowsAffected);
         }
         catch (SQLException e){
             throw new dbException(e.getMessage());
