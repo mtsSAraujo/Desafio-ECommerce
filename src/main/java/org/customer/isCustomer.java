@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import static db.DB.closeStatement;
 import static db.cart.addProductOnCart.addProductOnCart;
+import static db.cart.removeProductFromCart.removeProductFromCart;
 import static db.cart.showCart.showCart;
 import static db.controlDB.showDB.showDB;
 import static db.cart.productsTotal.productsTotal;
@@ -53,14 +54,18 @@ public class isCustomer {
                     }
                     break;
 
-            case 2:
-                addProductOnCart(conn, cont);
-                break;
+                case 2:
+                    showDB(st);
+                    addProductOnCart(conn, cont);
+                    break;
 
-//            case 3:
-//                removeProductFromCart(id product, int quantity)
-//                break;
-//
+                case 3:
+                    showCart(st);
+                    System.out.println("Digite o id do produto a ser removido: ");
+                    int idRemovido = sc.nextInt();
+                    removeProductFromCart(conn, idRemovido);
+                    break;
+
                 case 4:
                     showCart(st);
                     System.out.println("Subtotal: R$" + productsTotal(st));
