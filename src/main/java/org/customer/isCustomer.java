@@ -98,7 +98,8 @@ public class isCustomer {
             System.out.println("3 - Remover produto do carrinho;");
             System.out.println("4 - Ver carrinho atual;");
             System.out.println("5 - Modificar itens do carrinho;");
-            System.out.println("6 - Voltar ao menu anterior;");
+            System.out.println("6 - Confirmar compra;");
+            System.out.println("7 - Voltar ao menu anterior;");
             option = sc.nextInt();
 
         }
