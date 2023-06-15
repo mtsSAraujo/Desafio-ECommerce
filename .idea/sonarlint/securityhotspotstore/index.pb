@@ -1,10 +1,4 @@
 
-Z
-*src/main/java/org/employee/isEmployee.java,5\c\5c7d5ff9d6b1edc972822c1e02aeae214efff017
-[
-+src/main/java/db/cart/addProductOnKart.java,5\3\5315331f359b96e359feed2cf1d137bcc0fe9887
-`
-0src/main/java/db/cart/removeProductFromKart.java,7\6\76fa74ee9602ef8eabc568c1294021bb1ce20c12
 U
 %src/main/java/db/cart/modifyCart.java,8\2\8284ad228e3e3e66f894a0c4dd2ea048f8408aa9
 W

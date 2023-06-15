@@ -14,9 +14,9 @@ public class showCart {
         try{
             ResultSet rs = st.executeQuery("select * from kart;");
 
-            System.out.println("Name   |   Price   |   Quantity");
+            System.out.println("ID   |   Name   |   Price   |   Quantity");
             while(rs.next()){
-                System.out.println(rs.getString("product_name") + "   |   " + rs.getDouble("product_price") + "   |   " + rs.getInt("quantity"));
+                System.out.println(rs.getInt("id") + "   |   " + rs.getString("product_name") + "   |   " + rs.getDouble("product_price") + "   |   " + rs.getInt("quantity"));
             }
         }
         catch(SQLException e){
