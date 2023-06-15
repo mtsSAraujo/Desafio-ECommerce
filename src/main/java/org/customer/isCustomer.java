@@ -1,5 +1,7 @@
 package org.customer;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import static db.cart.showCart.showCart;
@@ -7,7 +9,7 @@ import static db.controlDB.showDB.showDB;
 
 public class isCustomer {
 
-    public void menuCustomer(){
+    public void menuCustomer(Statement st, ResultSet rs){
         System.out.println("Escolhe uma das opções a seguir:");
         System.out.println("1 - Ver lista de produtos;");
         System.out.println("2 - Adicionar produto ao carrinho;");
@@ -22,7 +24,7 @@ public class isCustomer {
 
         switch(option){
             case 1:
-                showDB();
+                showDB(st);
                 break;
 
 //            case 2:
@@ -34,7 +36,7 @@ public class isCustomer {
 //                break;
 //
             case 4:
-                showCart();
+                showCart(st);
                 //productsTotal();
                 break;
 

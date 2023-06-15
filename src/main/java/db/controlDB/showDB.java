@@ -9,17 +9,11 @@ import java.sql.Statement;
 
 public class showDB {
 
-    public static void showDB(){
+    public static void showDB(Statement st){
 
-        Connection conn = null;
-        Statement st = null;
-        ResultSet rs = null;
         try{
-            conn = DB.getConnection();
 
-            st = conn.createStatement();
-
-            rs = st.executeQuery("select * from products;");
+            ResultSet rs = st.executeQuery("select * from products;");
 
             System.out.println("Name   |   Price   |   Quantity");
             while(rs.next()){
@@ -29,10 +23,6 @@ public class showDB {
         catch(SQLException e){
             e.printStackTrace();
         }
-
-        DB.closeResultSet(rs);
-        DB.closeStatement(st);
-        DB.closeConnection();
 
     }
 }

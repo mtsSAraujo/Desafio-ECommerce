@@ -9,17 +9,10 @@ import java.sql.Statement;
 
 public class showCart {
 
-    public static void showCart(){
+    public static void showCart(Statement st){
 
-        Connection conn = null;
-        Statement st = null;
-        ResultSet rs = null;
         try{
-            conn = DB.getConnection();
-
-            st = conn.createStatement();
-
-            rs = st.executeQuery("select * from kart;");
+            ResultSet rs = st.executeQuery("select * from kart;");
 
             System.out.println("Name   |   Price   |   Quantity");
             while(rs.next()){
@@ -29,10 +22,5 @@ public class showCart {
         catch(SQLException e){
             e.printStackTrace();
         }
-
-        DB.closeResultSet(rs);
-        DB.closeStatement(st);
-        DB.closeConnection();
-
     }
 }
