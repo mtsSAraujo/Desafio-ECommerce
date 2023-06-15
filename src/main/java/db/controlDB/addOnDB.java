@@ -16,7 +16,6 @@ public class addOnDB {
         PreparedStatement st = null;
         Scanner sc = new Scanner(System.in);
 
-
         try{
 
             st = conn.prepareStatement("INSERT INTO products "
@@ -45,8 +44,6 @@ public class addOnDB {
         catch (SQLException e){
             throw new dbException(e.getMessage());
         }
-
-
 
         closeStatement(st);
     }

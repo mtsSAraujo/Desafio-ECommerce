@@ -9,12 +9,14 @@ import java.sql.Statement;
 public class productsTotal {
 
     public static double productsTotal(Statement st){
-        double total = 0;
+        double product_total = 0.0;
+        double total = 0.0;
         try {
             ResultSet rs = st.executeQuery("select * from kart;");
 
             while (rs.next()) {
-                total += rs.getDouble("product_price");
+                product_total = rs.getDouble("product_price") * rs.getInt("product_quantity");
+                total += product_total;
             }
         }
         catch(SQLException e){

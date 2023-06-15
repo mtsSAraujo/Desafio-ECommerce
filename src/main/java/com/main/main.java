@@ -5,9 +5,6 @@ import db.DB;
 import java.sql.*;
 import java.util.Scanner;
 
-import static db.cart.productsTotal.productsTotal;
-import static db.cart.showCart.showCart;
-import static db.controlDB.showDB.showDB;
 import static org.customer.isCustomer.*;
 import static org.employee.isEmployee.*;
 
@@ -57,5 +54,6 @@ public class main {
             System.out.println("0 - Finalizar Programa.");
             option = sc.nextInt();
         }
+
     }
 }

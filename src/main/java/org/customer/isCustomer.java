@@ -9,9 +9,11 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 import static db.DB.closeStatement;
+import static db.cart.addProductOnCart.addProductOnCart;
 import static db.cart.showCart.showCart;
 import static db.controlDB.showDB.showDB;
 import static db.cart.productsTotal.productsTotal;
+import static org.customer.purchaseConfirmation.confirmation;
 
 public class isCustomer {
 
@@ -31,18 +33,19 @@ public class isCustomer {
         System.out.println("3 - Remover produto do carrinho;");
         System.out.println("4 - Ver carrinho atual;");
         System.out.println("5 - Modificar itens do carrinho;");
-        System.out.println("6 - Voltar ao menu anterior;");
+        System.out.println("6 - Confirmar compra;");
+        System.out.println("7 - Voltar ao menu anterior;");
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
-
+        int cont = 1;
         while(option>=0 && option<= 6) {
+            String sair = "1";
             switch (option) {
 
                 case 1:
-                    String sair = "1";
                     while(sair.equals("1")) {
                         showDB(st);
-                        System.out.println("Deseja voltar ao menu anterior? (Digite qualquer coisa)");
+                        System.out.println("Digite qualquer tecla para voltar ao menu anterior:");
                         sair = sc.next();
                         if(sair.equals("1")){
                             sair = "2";
@@ -50,10 +53,10 @@ public class isCustomer {
                     }
                     break;
 
-//            case 2:
-//                addProductOnCart(id product, int quantity);
-//                break;
-//
+            case 2:
+                addProductOnCart(conn, cont);
+                break;
+
 //            case 3:
 //                removeProductFromCart(id product, int quantity)
 //                break;
@@ -71,7 +74,12 @@ public class isCustomer {
 //                if(modifyKart == 1){
 //                    System.out.println("Digite o id do produto e a quantidade a ser alterada, no formato (id quantidade):");
 //                }
+
                 case 6:
+                    confirmation(conn);
+                    break;
+
+                case 7:
                     break;
 //
 //                break;
@@ -81,7 +89,7 @@ public class isCustomer {
 //                break;
 //
             }
-            if(option == 6){
+            if(option == 7){
                 break;
             }
             System.out.println("Escolhe uma das opções a seguir:");

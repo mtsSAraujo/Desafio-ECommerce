@@ -33,12 +33,12 @@ public class isEmployee {
         System.out.println("\n\n\n");
 
         while(option>0 && option <=5) {
+            String sair = "1";
             switch (option) {
                 case 1:
-                    String sair = "1";
                     while(sair.equals("1")) {
                         showDB(st);
-                        System.out.println("Deseja voltar ao menu anterior? (Digite qualquer coisa)");
+                        System.out.println("Digite qualquer tecla para voltar ao menu anterior:");
                         sair = sc.next();
                         if(sair.equals("1")){
                             sair = "2";
