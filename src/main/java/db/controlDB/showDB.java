@@ -11,9 +11,10 @@ public class showDB {
 
     public static void showDB(Statement st){
 
+        ResultSet rs = null;
         try{
 
-            ResultSet rs = st.executeQuery("select * from products;");
+            rs = st.executeQuery("select * from products;");
 
             System.out.println("ID   |   Name   |   Price   |   Quantity");
             while(rs.next()){
@@ -24,5 +25,6 @@ public class showDB {
             e.printStackTrace();
         }
 
+        DB.closeResultSet(rs);
     }
 }

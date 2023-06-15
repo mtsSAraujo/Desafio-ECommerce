@@ -11,8 +11,9 @@ public class showCart {
 
     public static void showCart(Statement st){
 
+        ResultSet rs = null;
         try{
-            ResultSet rs = st.executeQuery("select * from kart;");
+            rs = st.executeQuery("select * from kart;");
 
             System.out.println("ID   |   Name   |   Price   |   Quantity");
             while(rs.next()){
@@ -22,5 +23,7 @@ public class showCart {
         catch(SQLException e){
             e.printStackTrace();
         }
+
+        DB.closeResultSet(rs);
     }
 }

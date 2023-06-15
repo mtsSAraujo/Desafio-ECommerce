@@ -1,17 +1,30 @@
 package org.customer;
 
+import db.dbException;
+
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import static db.DB.closeStatement;
 import static db.cart.showCart.showCart;
 import static db.controlDB.showDB.showDB;
 import static db.cart.productsTotal.productsTotal;
-import static clearConsole.clearConsole.clear;
 
 public class isCustomer {
 
-    public static void menuCustomer(Statement st){
+    public static void menuCustomer(Connection conn){
+
+        Statement st = null;
+        try{
+            st = conn.createStatement();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
         System.out.println("Escolhe uma das opções a seguir:");
         System.out.println("1 - Ver lista de produtos;");
         System.out.println("2 - Adicionar produto ao carrinho;");
@@ -19,15 +32,22 @@ public class isCustomer {
         System.out.println("4 - Ver carrinho atual;");
         System.out.println("5 - Modificar itens do carrinho;");
         System.out.println("6 - Voltar ao menu anterior;");
-        System.out.println("0 - Finalizar Programa.");
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
-        clear();
 
         while(option>=0 && option<= 6) {
             switch (option) {
+
                 case 1:
-                    showDB(st);
+                    String sair = "1";
+                    while(sair.equals("1")) {
+                        showDB(st);
+                        System.out.println("Deseja voltar ao menu anterior? (Digite qualquer coisa)");
+                        sair = sc.next();
+                        if(sair.equals(1)){
+                            sair = "2";
+                        }
+                    }
                     break;
 
 //            case 2:
@@ -51,6 +71,8 @@ public class isCustomer {
 //                if(modifyKart == 1){
 //                    System.out.println("Digite o id do produto e a quantidade a ser alterada, no formato (id quantidade):");
 //                }
+                case 6:
+                    break;
 //
 //                break;
 //
@@ -59,6 +81,9 @@ public class isCustomer {
 //                break;
 //
             }
+            if(option == 6){
+                break;
+            }
             System.out.println("Escolhe uma das opções a seguir:");
             System.out.println("1 - Ver lista de produtos;");
             System.out.println("2 - Adicionar produto ao carrinho;");
@@ -66,10 +91,10 @@ public class isCustomer {
             System.out.println("4 - Ver carrinho atual;");
             System.out.println("5 - Modificar itens do carrinho;");
             System.out.println("6 - Voltar ao menu anterior;");
-            System.out.println("0 - Finalizar Programa.");
             option = sc.nextInt();
-            clear();
 
         }
+
+        closeStatement(st);
     }
 }
