@@ -1,5 +1,7 @@
 package db.cart;
 
+import db.DB;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -23,6 +25,9 @@ public class removeProductFromCart {
         }
         catch(SQLException e){
             e.printStackTrace();
+        }
+        finally {
+            DB.closeStatement(deleteProduct);
         }
 
     }
