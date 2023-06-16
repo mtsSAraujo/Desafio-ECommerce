@@ -86,6 +86,10 @@ public class isEmployee {
                     break;
 
                 case 4:
+                    showDB(st);
+                    System.out.println(new StringBuilder().append("Would you like to increase or decrease ").append("the quantity of products?\n").append("1 - Increase \n2 - Decrease").toString());
+                    int increaseOrDecrease = sc.nextInt();
+
                     break;
 
                 case 5:
