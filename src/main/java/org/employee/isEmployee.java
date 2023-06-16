@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 import static db.controlDB.addOnDB.addProductOnDB;
+import static db.controlDB.removeFromDB.checkIfProductNotOnCart;
 import static db.controlDB.removeFromDB.removeProductFromDB;
 import static db.controlDB.showDB.showDB;
 
@@ -66,7 +67,7 @@ public class isEmployee {
                         while(checkIfProductExistsInDB.next()){
                             if(removedProductID == checkIfProductExistsInDB.getInt("id")){
                                 flagCheckIfProductExistsInDB = false;
-                                removeProductFromDB(conn, removedProductID);
+                                checkIfProductNotOnCart(conn, removedProductID);
                                 break;
                             }
                             else{
