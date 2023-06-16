@@ -2,12 +2,15 @@ package org.employee;
 
 import db.DB;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
 import static db.controlDB.addOnDB.addProductOnDB;
+import static db.controlDB.removeFromDB.removeProductFromDB;
 import static db.controlDB.showDB.showDB;
 
 public class isEmployee {
@@ -52,6 +55,34 @@ public class isEmployee {
                     break;
 
                 case 3:
+                    showDB(st);
+                    System.out.println("Insert the ID of the product you wish to remove: ");
+                    int removedProductID = sc.nextInt();
+                    ResultSet checkIfProductExistsInDB = null;
+                    boolean flagCheckIfProductExistsInDB = true;
+                    try {
+                        checkIfProductExistsInDB = st.executeQuery("SELECT id FROM products");
+
+                        while(checkIfProductExistsInDB.next()){
+                            if(removedProductID == checkIfProductExistsInDB.getInt("id")){
+                                flagCheckIfProductExistsInDB = false;
+                                removeProductFromDB(conn, removedProductID);
+                                break;
+                            }
+                            else{
+                                flagCheckIfProductExistsInDB = true;
+                            }
+                        }
+                        if(flagCheckIfProductExistsInDB){
+                            System.out.println("Product is not in DB.");
+                        }
+                    }
+                    catch(SQLException e){
+                        e.printStackTrace();
+                    }
+                    finally {
+                        DB.closeResultSet(checkIfProductExistsInDB);
+                    }
                     break;
 
                 case 4:
