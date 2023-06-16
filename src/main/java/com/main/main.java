@@ -5,6 +5,9 @@ import db.DB;
 import java.sql.*;
 import java.util.Scanner;
 
+import static com.main.util.fileReader.fileReader;
+import static com.main.util.fileReaderTableCart.fileReaderTableCart;
+import static com.main.util.fileReaderTableProducts.fileReaderTableProducts;
 import static org.customer.isCustomer.*;
 import static org.employee.isEmployee.*;
 
@@ -15,6 +18,39 @@ public class main {
 
         conn = DB.getConnection();
 
+        //Call Method for building the DataBase
+        String queryTable = fileReaderTableProducts();
+
+        String queryValues = fileReader();
+
+        String queryTableCart = fileReaderTableCart();
+
+        PreparedStatement insertTablesInDB = null;
+        PreparedStatement insertTableCartInDB = null;
+        PreparedStatement insertValuesInDB = null;
+
+        try{
+            insertTablesInDB = conn.prepareStatement(queryTable);
+
+            insertTablesInDB.execute();
+
+            insertTableCartInDB = conn.prepareStatement(queryTableCart);
+
+            insertTableCartInDB.execute();
+
+            insertValuesInDB = conn.prepareStatement(queryValues);
+
+            insertValuesInDB.executeUpdate();
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            DB.closeStatement(insertTablesInDB);
+            DB.closeStatement(insertValuesInDB);
+            DB.closeStatement(insertTableCartInDB);
+        }
 
 
         isCustomerOrEmployee(conn);

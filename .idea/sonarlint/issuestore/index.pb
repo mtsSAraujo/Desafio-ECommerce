@@ -5,8 +5,6 @@
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Q
 !src/main/java/db/dbException.java,7\9\797788256014b2b1449ebd7410704cbc5930f01a
-=
-db.properties,3\b\3b8c33088fa60dfa967fdedbf4c75fa52fdece9a
 H
 src/main/java/db/DB.java,8\7\873de590a22366477593b15a461ed3afa0172f42
 Z
@@ -27,19 +25,11 @@ X
 (src/main/java/db/cart/productsTotal.java,0\7\073b2c4e3028f16ca1e08e088bd1d7098ad7a23a
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-P
- src/main/java/com/main/main.java,5\d\5d5931f08c032ca4665fb0a89e0b215afbc3b620
 d
 4src/main/java/org/customer/purchaseConfirmation.java,2\4\24704179dbfb0c550f05031d14405a2cf6dbc358
-[
-+src/main/java/db/cart/addProductOnCart.java,a\e\ae0f7aa19f89a3e28413a245dfb6b4c6ae625a9a
 Z
 *src/main/java/org/customer/isCustomer.java,5\e\5e32ae5fad25c04b9fc00fd2933781c889758ba4
 `
 0src/main/java/db/cart/removeProductFromCart.java,3\0\3000f86532d9acd8fe948f91369f3984ed156e90
 S
 #src/main/java/db/cart/showCart.java,8\9\89a0a131c77c887092aeba26d7c64f5b025cdc6f
-B
-schema_control.sql,9\3\9388bd395c3c43e08b6f63fdbb6bd3ebc9b51d2a
-[
-+src/main/java/com/main/util/fileReader.java,c\3\c3c7147a2e805d032970717f9a4683f06cec85d9

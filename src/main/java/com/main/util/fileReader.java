@@ -6,9 +6,9 @@ import java.io.IOException;
 
 public class fileReader {
 
-    public static StringBuilder queryCreation;
-    public static void main(String[] args) {
+    public static String fileReader() {
         String filePath = "schema_control.sql"; // Substitua pelo caminho do arquivo que deseja ler
+        StringBuilder queryCreation = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -18,6 +18,7 @@ public class fileReader {
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
+        return queryCreation.toString();
     }
 }
 
