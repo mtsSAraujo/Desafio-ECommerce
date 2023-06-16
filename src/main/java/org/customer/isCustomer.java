@@ -11,8 +11,10 @@ import java.util.Scanner;
 
 import static db.DB.closeStatement;
 import static db.cart.addProductOnCart.addProductOnCart;
+import static db.cart.modifyCart.increaseOrDecreaseOnCart;
 import static db.cart.removeProductFromCart.removeProductFromCart;
 import static db.cart.showCart.showCart;
+import static db.controlDB.modifyItemOnDB.increseOrDecrease;
 import static db.controlDB.showDB.showDB;
 import static db.cart.productsTotal.productsTotal;
 import static org.customer.purchaseConfirmation.confirmation;
@@ -107,6 +109,10 @@ public class isCustomer {
                     break;
 
                 case 5:
+                    showDB(st);
+                    System.out.println(new StringBuilder().append("Would you like to increase or decrease ").append("the quantity of products?\n").append("1 - Increase \n2 - Decrease").toString());
+                    int increaseOrDecreaseCart = sc.nextInt();
+                    increaseOrDecreaseOnCart(conn, increaseOrDecreaseCart);
                     break;
 
                 case 6:
