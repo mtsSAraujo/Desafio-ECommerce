@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 import static db.controlDB.addOnDB.addProductOnDB;
+import static db.controlDB.modifyItemOnDB.increseOrDecrease;
 import static db.controlDB.removeFromDB.checkIfProductNotOnCart;
 import static db.controlDB.removeFromDB.removeProductFromDB;
 import static db.controlDB.showDB.showDB;
@@ -90,7 +91,7 @@ public class isEmployee {
                     showDB(st);
                     System.out.println(new StringBuilder().append("Would you like to increase or decrease ").append("the quantity of products?\n").append("1 - Increase \n2 - Decrease").toString());
                     int increaseOrDecrease = sc.nextInt();
-
+                    increseOrDecrease(conn, increaseOrDecrease);
                     break;
 
                 case 5:
