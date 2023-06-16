@@ -31,6 +31,24 @@ public class modifyItemOnDB {
 
     public static void decreaseProductOnDB(Connection conn, int id, int quantity){
 
+        PreparedStatement decreaseOnDB = null;
+        try{
+            decreaseOnDB = conn.prepareStatement("UPDATE products "
+                    + "SET quantity = quantity - ? "
+                    + "WHERE (id = ?)");
+
+            decreaseOnDB.setInt(1, quantity);
+            decreaseOnDB.setInt(2, id);
+            decreaseOnDB.executeUpdate();
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            DB.closeStatement(decreaseOnDB);
+        }
+
     }
 
 
@@ -60,7 +78,7 @@ public class modifyItemOnDB {
         return false;
     }
 
-    public static boolean checkIfQuantityMatchs(Connection conn, int id, int quantity){
+    public static boolean checkIfQuantityMatchsIncrease(Connection conn, int id, int quantity){
 
         Statement startResultSet = null;
         ResultSet productsList = null;
@@ -87,6 +105,33 @@ public class modifyItemOnDB {
 
         return false;
     }
+    public static boolean checkIfQuantityMatchsDecrease(Connection conn, int id, int quantity){
+
+        Statement startResultSet = null;
+        ResultSet productsList = null;
+
+        try{
+
+            startResultSet = conn.createStatement();
+            String query = String.format("SELECT * FROM products where id = %s", id);
+            productsList = startResultSet.executeQuery(query);
+
+            while(productsList.next()){
+                if((productsList.getInt("quantity") - quantity) >= 0) {
+                    return true;
+                }
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            DB.closeStatement(startResultSet);
+            DB.closeResultSet(productsList);
+        }
+
+        return false;
+    }
 
 
     public static void increseOrDecrease(Connection conn, int option){
@@ -97,8 +142,9 @@ public class modifyItemOnDB {
             if(checkIfProductExists(conn, id)){
                 System.out.println("Insert the product quantity you want to add: ");
                 int quantity = sc.nextInt();
-                if(checkIfQuantityMatchs(conn, id, quantity)){
+                if(checkIfQuantityMatchsIncrease(conn, id, quantity)){
                     increaseProductOnDB(conn, id, quantity);
+                    System.out.println("Added "+ quantity + " to the product successfully!");
                 }
                 else{
                     System.out.println("Quantity added would reduce quantity to negative number."
@@ -116,8 +162,9 @@ public class modifyItemOnDB {
             if(checkIfProductExists(conn, id)){
                 System.out.println("Insert the product quantity you want to decrease: ");
                 int quantity = sc.nextInt();
-                if(checkIfQuantityMatchs(conn, id, quantity)){
+                if(checkIfQuantityMatchsDecrease(conn, id, quantity)){
                     decreaseProductOnDB(conn, id, quantity);
+                    System.out.println("Removed "+ quantity + " to the product successfully!");
                 }
                 else{
                     System.out.println("Quantity added would reduce quantity to negative number."
