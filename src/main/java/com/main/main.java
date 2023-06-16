@@ -61,9 +61,9 @@ public class main {
 
     public static void isCustomerOrEmployee(Connection conn){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Insira uma das opções a seguir: \n1 - Cliente");
-        System.out.println("2 - Funcionário");
-        System.out.println("0 - Finalizar Programa.");
+        System.out.println("Choose one of the following option: \n1 - Customer;");
+        System.out.println("2 - Employee;");
+        System.out.println("0 - End Program.");
         int option = sc.nextInt();
         while(option>=0 && option <= 2) {
             switch (option) {
@@ -87,9 +87,9 @@ public class main {
             if(option == 0){
                 break;
             }
-            System.out.println("Insira uma das opções a seguir: \n1 - Cliente");
-            System.out.println("2 - Funcionário");
-            System.out.println("0 - Finalizar Programa.");
+            System.out.println("Choose one of the following option: \n1 - Customer;");
+            System.out.println("2 - Employee;");
+            System.out.println("0 - End Program.");
             option = sc.nextInt();
         }
 

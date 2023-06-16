@@ -20,7 +20,7 @@ public class removeProductFromCart {
             deleteProduct.setInt(1,id);
 
             deleteProduct.executeUpdate();
-            System.out.println("Produto removido com sucesso!");
+            System.out.println("Product removed successfully!");
 
         }
         catch(SQLException e){

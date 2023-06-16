@@ -24,22 +24,22 @@ public class addOnDB {
                     + "(?, ?, ?)");
 
             while(cont == 1) {
-                System.out.println("Digite o nome do produto: ");
+                System.out.println("Insert product name: ");
                 String product_name = sc.next();
                 st.setString(1, product_name);
-                System.out.println("Digite o preço do produto: ");
+                System.out.println("Insert product price: ");
                 Double product_price = sc.nextDouble();
                 st.setDouble(2, product_price);
-                System.out.println("Digite a quantidade do produto: ");
+                System.out.println("Insert the product quantity: ");
                 int quantity = sc.nextInt();
                 st.setInt(3, quantity);
-                System.out.println("Deseja cadastrar outro produto?"
-                    + "\nDigite:\n1 - Para Sim\n2 - Para Não");
+                System.out.println("Do you wish to add another product?"
+                    + "\n1 - Yes \n2 - No");
                 cont = sc.nextInt();
 
             }
             int rowsAffected = st.executeUpdate();
-            System.out.println("Feito! Produtos adicionados: " + rowsAffected);
+            System.out.println("Done! Products added: " + rowsAffected);
         }
         catch (SQLException e){
             throw new dbException(e.getMessage());

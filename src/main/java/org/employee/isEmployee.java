@@ -22,26 +22,26 @@ public class isEmployee {
             e.printStackTrace();
         }
 
-        System.out.println("Escolhe uma das opções a seguir:");
-        System.out.println("1 - Ver lista de produtos;");
-        System.out.println("2 - Adicionar produto ao banco de dados;");
-        System.out.println("3 - Remover produto do banco de dados;");
-        System.out.println("4 - Modificar itens do banco de dados;");
-        System.out.println("5 - Voltar ao menu anterior;");
+        System.out.println("Choose one of the following options:");
+        System.out.println("1 - Products list;");
+        System.out.println("2 - Add product on Data Base;");
+        System.out.println("3 - Remove product from Data Base;");
+        System.out.println("4 - Modify products from Data Base;");
+        System.out.println("5 - Previous menu;");
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
         System.out.println("\n\n\n");
 
         while(option>0 && option <=5) {
-            String sair = "1";
+            String exit = "1";
             switch (option) {
                 case 1:
-                    while(sair.equals("1")) {
+                    while(exit.equals("1")) {
                         showDB(st);
-                        System.out.println("Digite qualquer tecla para voltar ao menu anterior:");
-                        sair = sc.next();
-                        if(sair.equals("1")){
-                            sair = "2";
+                        System.out.println("Press any button to go back to the previous menu:");
+                        exit = sc.next();
+                        if(exit.equals("1")){
+                            exit = "2";
                         }
                     }
                     break;
@@ -62,18 +62,18 @@ public class isEmployee {
 
 
                 default:
-                    System.out.println("Opção digitada inválida!");
+                    System.out.println("Invalid Option!");
                     break;
             }
             if(option == 5){
                 break;
             }
-            System.out.println("Escolhe uma das opções a seguir:");
-            System.out.println("1 - Ver lista de produtos;");
-            System.out.println("2 - Adicionar produto ao banco de dados;");
-            System.out.println("3 - Remover produto do banco de dados;");
-            System.out.println("4 - Modificar itens do banco de dados;");
-            System.out.println("5 - Voltar ao menu anterior;");
+            System.out.println("Choose one of the following options:");
+            System.out.println("1 - Products list;");
+            System.out.println("2 - Add product on Data Base;");
+            System.out.println("3 - Remove product from Data Base;");
+            System.out.println("4 - Modify products from Data Base;");
+            System.out.println("5 - Previous menu;");
             option = sc.nextInt();
             System.out.println("\n\n\n");
         }

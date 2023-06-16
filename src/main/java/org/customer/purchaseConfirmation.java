@@ -24,19 +24,19 @@ public  class purchaseConfirmation {
         }
         Scanner sc = new Scanner(System.in);
         double total = productsTotal(st);
-        System.out.println("O valor final da compra foi: \n"
-                + total + "\n Deseja confirmar o pedido?"
-                + "\n1 - Para Sim; \n2 - Para Não.");
+        System.out.println("The final value of purchase was: \n"
+                + total + "\nWant to continue?"
+                + "\n1 - Yes; \n2 - No.");
         int confirmation = sc.nextInt();
 
         if(confirmation == 1){
-            System.out.println("Compra confirmada!");
+            System.out.println("Purchase confirmed!");
             updateDB(conn);
             emptyCart(conn);
         }
         else{
-            System.out.println("Não foi possivel confirmar sua compra."
-            + "\nVoltando ao menu anterior.");
+            System.out.println("It was not possible to confirm your purchase."
+            + "\nBack to the previous menu.");
         }
 
         DB.closeStatement(st);

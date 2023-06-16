@@ -1,5 +1,6 @@
 package org.customer;
 
+import db.DB;
 import db.dbException;
 
 import java.sql.Connection;
@@ -28,42 +29,76 @@ public class isCustomer {
             e.printStackTrace();
         }
 
-        System.out.println("Escolhe uma das opções a seguir:");
-        System.out.println("1 - Ver lista de produtos;");
-        System.out.println("2 - Adicionar produto ao carrinho;");
-        System.out.println("3 - Remover produto do carrinho;");
-        System.out.println("4 - Ver carrinho atual;");
-        System.out.println("5 - Modificar itens do carrinho;");
-        System.out.println("6 - Confirmar compra;");
-        System.out.println("7 - Voltar ao menu anterior;");
+        System.out.println("Choose one of the following options:");
+        System.out.println("1 - Products list;");
+        System.out.println("2 - Add product on Cart;");
+        System.out.println("3 - Remove product from Cart;");
+        System.out.println("4 - List of products on Cart;");
+        System.out.println("5 - Modify Cart items;");
+        System.out.println("6 - Confirm Purchase;");
+        System.out.println("7 - Previous menu;");
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
         int cont = 1;
         while(option>=0 && option<= 6) {
-            String sair = "1";
+            String exit = "1";
             switch (option) {
 
                 case 1:
-                    while(sair.equals("1")) {
+                    while(exit.equals("1")) {
                         showDB(st);
-                        System.out.println("Digite qualquer tecla para voltar ao menu anterior:");
-                        sair = sc.next();
-                        if(sair.equals("1")){
-                            sair = "2";
+                        System.out.println("Press any button to go back to the previous menu:");
+                        exit = sc.next();
+                        if(exit.equals("1")){
+                            exit = "2";
                         }
                     }
                     break;
 
                 case 2:
                     showDB(st);
-                    addProductOnCart(conn, cont);
+                    System.out.println("Insert the product ID that will be added: ");
+                    int productAddedID = sc.nextInt();
+                    System.out.println("Insert the product quantity to be added: ");
+                    int productAddedQuantity = sc.nextInt();
+                    ResultSet seeIfProductOnDB = null;
+                    boolean controlProductAdded = false;
+                    try{
+                        seeIfProductOnDB = st.executeQuery("SELECT * FROM products");
+
+                        while(seeIfProductOnDB.next()){
+                            if (productAddedID == seeIfProductOnDB.getInt("id")){
+                                controlProductAdded = false;
+                                if (productAddedQuantity  <= seeIfProductOnDB.getInt("quantity")) {
+                                    addProductOnCart(conn, cont, productAddedID, productAddedQuantity);
+                                    break;
+                                }
+                                else{
+                                    System.out.println("Product quantity higher then the available on Stock.");
+                                    break;
+                                }
+                            }
+                            else{
+                                controlProductAdded = true;
+                            }
+                        }
+                        if (controlProductAdded){
+                            System.out.println("Product ID Not Found.");
+                        }
+                    }
+                    catch(SQLException e){
+                        e.printStackTrace();
+                    }
+                    finally {
+                        DB.closeResultSet(seeIfProductOnDB);
+                    }
                     break;
 
                 case 3:
                     showCart(st);
-                    System.out.println("Digite o id do produto a ser removido: ");
-                    int idRemovido = sc.nextInt();
-                    removeProductFromCart(conn, idRemovido);
+                    System.out.println("Insert the ID of a product to be removed: ");
+                    int idRemoved = sc.nextInt();
+                    removeProductFromCart(conn, idRemoved);
                     break;
 
                 case 4:
@@ -97,14 +132,14 @@ public class isCustomer {
             if(option == 7){
                 break;
             }
-            System.out.println("Escolhe uma das opções a seguir:");
-            System.out.println("1 - Ver lista de produtos;");
-            System.out.println("2 - Adicionar produto ao carrinho;");
-            System.out.println("3 - Remover produto do carrinho;");
-            System.out.println("4 - Ver carrinho atual;");
-            System.out.println("5 - Modificar itens do carrinho;");
-            System.out.println("6 - Confirmar compra;");
-            System.out.println("7 - Voltar ao menu anterior;");
+            System.out.println("Choose one of the following options:");
+            System.out.println("1 - Products list;");
+            System.out.println("2 - Add product on Cart;");
+            System.out.println("3 - Remove product from Cart;");
+            System.out.println("4 - List of products on Cart;");
+            System.out.println("5 - Modify Cart items;");
+            System.out.println("6 - Confirm Purchase;");
+            System.out.println("7 - Previous menu;");
             option = sc.nextInt();
 
         }
