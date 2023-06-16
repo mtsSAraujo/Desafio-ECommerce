@@ -1,0 +1,10 @@
+
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(çÃ²şıÿÿÿÿ8‰‘¶‰Œ1
+n
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(«Œ˜Ûÿÿÿÿÿ8Š‘¶‰Œ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(çÃ²şıÿÿÿÿ8‘‘¶‰Œ1
+U	java:S106 "9Replace this use of System.out or System.err by a logger.(­ÚÇ°8”‘¶‰Œ1
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(­ËÖşÿÿÿÿ8•‘¶‰Œ1
+M
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8¤àº‰Œ1

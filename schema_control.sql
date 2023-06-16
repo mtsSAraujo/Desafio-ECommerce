@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS products;
+
+USE products;
+
 CREATE TABLE products(
 id int not null AUTO_INCREMENT,
 product_name varchar(40),
