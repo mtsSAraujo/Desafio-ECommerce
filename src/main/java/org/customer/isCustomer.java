@@ -40,7 +40,7 @@ public class isCustomer {
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
         int cont = 1;
-        while(option>=0 && option<= 6) {
+        while(option>=0 && option<= 7) {
             String exit = "1";
             switch (option) {
 
@@ -106,14 +106,8 @@ public class isCustomer {
                     System.out.println("Subtotal: R$" + productsTotal(st));
                     break;
 
-//            case 5:
-//                showCart();
-//                System.out.println("Deseja adicionar ou remover algum produto?");
-//                System.out.println("1 - Sim; \n2 - Não");
-//                int modifyKart = sc.nextInt();
-//                if(modifyKart == 1){
-//                    System.out.println("Digite o id do produto e a quantidade a ser alterada, no formato (id quantidade):");
-//                }
+                case 5:
+                    break;
 
                 case 6:
                     confirmation(conn);
@@ -121,13 +115,11 @@ public class isCustomer {
 
                 case 7:
                     break;
-//
-//                break;
-//
-//            default:
-//                System.out.println("Insira uma opção válida!");
-//                break;
-//
+
+                default:
+                    System.out.println("Invalid Option!");
+                break;
+
             }
             if(option == 7){
                 break;
