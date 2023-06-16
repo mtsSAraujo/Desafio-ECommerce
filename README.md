@@ -1,10 +1,30 @@
 # Desafio-ECommerce
 
+## Tecnologias utilizadas
+
+O projeto foi feito utilizando JAVA puro, com conexão ao banco de dados (MySQL) atráves da JDBC.
+
+## Sobre o projeto
+
 O projeto consiste em um carrinho de compras feito utilizando JAVA e alguma ferramenta de banco de dados (MySQL ou MongoDB);
 
 Nesse projeto, tudo acontecerá atráves do terminal da IDE, de modo que, para interagir, o usuário precisa seguir os passos especificados no prompt.
 
 ## Como rodar o programa
+
+Clone o repositório:
+
+git clone : https://github.com/mtsSAraujo/Desafio-ECommerce.git
+
+instale os pacotes:
+
+npm install
+
+É necessário instalar o Java connector e adiciona-lo a aba de "External Libraries";
+
+O link para download é:
+
+https://downloads.mysql.com/archives/c-j/
 
 O programa possui na sua main toda a logica para criar e popular o banco de dados quando iniciado, o usuário precisa apenas iniciar o MySQL e executar o programa a partir da main.
 
