@@ -15,6 +15,8 @@ public class main {
 
         conn = DB.getConnection();
 
+
+
         isCustomerOrEmployee(conn);
 
         DB.closeConnection();
