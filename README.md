@@ -4,7 +4,7 @@ O projeto consiste em um carrinho de compras feito utilizando JAVA e alguma ferr
 
 Nesse projeto, tudo acontecerá atráves do terminal da IDE, de modo que, para interagir, o usuário precisa seguir os passos especificados no prompt.
 
-##Como rodar o programa
+## Como rodar o programa
 
 O programa possui na sua main toda a logica para criar e popular o banco de dados quando iniciado, o usuário precisa apenas iniciar o MySQL e executar o programa a partir da main.
 
