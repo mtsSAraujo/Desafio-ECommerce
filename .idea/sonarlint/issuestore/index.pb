@@ -29,13 +29,9 @@ W
 ,src/main/java/db/controlDB/removeFromDB.java,7\6\76edd7811a219e08dd60dc47868ece7e5bd6e5bd
 V
 &src/main/java/db/controlDB/showDB.java,d\2\d294b6b070e38b227ffef7c8cee87c2148e9afc2
-Z
-*src/main/java/org/employee/isEmployee.java,5\c\5c7d5ff9d6b1edc972822c1e02aeae214efff017
 ^
 .src/main/java/db/controlDB/modifyItemOnDB.java,b\d\bdeb30cb49d22543451f4721e7bba49da8d77e69
 `
 0src/main/java/db/cart/removeProductFromCart.java,3\0\3000f86532d9acd8fe948f91369f3984ed156e90
 S
 #src/main/java/db/cart/showCart.java,8\9\89a0a131c77c887092aeba26d7c64f5b025cdc6f
-Z
-*src/main/java/org/customer/isCustomer.java,5\e\5e32ae5fad25c04b9fc00fd2933781c889758ba4

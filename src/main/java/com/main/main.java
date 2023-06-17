@@ -4,6 +4,7 @@ import db.DB;
 import db.dbAlreadyExistsException;
 
 import java.sql.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static com.main.util.fileReader.fileReader;
@@ -64,33 +65,38 @@ public class main {
         System.out.println("Choose one of the following option: \n1 - Customer;");
         System.out.println("2 - Employee;");
         System.out.println("0 - End Program.");
-        int option = sc.nextInt();
-        while(option>=0 && option <= 2) {
-            switch (option) {
-                case 1:
-                    menuCustomer(conn);
+        try {
+            int option = sc.nextInt();
+            while (option >= 0 && option <= 2) {
+                switch (option) {
+                    case 1:
+                        menuCustomer(conn);
+                        break;
+
+                    case 2:
+                        menuEmployee(conn);
+                        break;
+
+                    case 0:
+                        break;
+
+                    default:
+                        System.out.println("Digite uma opção válida para execução!");
+                        break;
+
+
+                }
+                if (option == 0) {
                     break;
-
-                case 2:
-                    menuEmployee(conn);
-                    break;
-
-                case 0:
-                    break;
-
-                default:
-                    System.out.println("Digite uma opção válida para execução!");
-                    break;
-
-
+                }
+                System.out.println("Choose one of the following option: \n1 - Customer;");
+                System.out.println("2 - Employee;");
+                System.out.println("0 - End Program.");
+                option = sc.nextInt();
             }
-            if(option == 0){
-                break;
-            }
-            System.out.println("Choose one of the following option: \n1 - Customer;");
-            System.out.println("2 - Employee;");
-            System.out.println("0 - End Program.");
-            option = sc.nextInt();
+        }
+        catch(InputMismatchException e){
+            System.out.println("You need to insert an number!");
         }
 
     }
