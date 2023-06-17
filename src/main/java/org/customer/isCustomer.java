@@ -41,7 +41,6 @@ public class isCustomer {
         System.out.println("7 - Previous menu;");
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
-        int cont = 1;
         while(option>=0 && option<= 7) {
             String exit = "1";
             switch (option) {
@@ -72,7 +71,7 @@ public class isCustomer {
                             if (productAddedID == seeIfProductOnDB.getInt("id")){
                                 controlProductAdded = false;
                                 if (productAddedQuantity  <= seeIfProductOnDB.getInt("quantity")) {
-                                    addProductOnCart(conn, cont, productAddedID, productAddedQuantity);
+                                    addProductOnCart(conn, productAddedID, productAddedQuantity);
                                     break;
                                 }
                                 else{
