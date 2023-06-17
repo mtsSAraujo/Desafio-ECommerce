@@ -64,32 +64,37 @@ public class isCustomer {
                         int productAddedID = sc.nextInt();
                         System.out.println("Insert the product quantity to be added: ");
                         int productAddedQuantity = sc.nextInt();
-                        ResultSet seeIfProductOnDB = null;
-                        boolean controlProductAdded = false;
-                        try {
-                            seeIfProductOnDB = st.executeQuery("SELECT * FROM products");
+                        if(productAddedQuantity> 0) {
+                            ResultSet seeIfProductOnDB = null;
+                            boolean controlProductAdded = false;
+                            try {
+                                seeIfProductOnDB = st.executeQuery("SELECT * FROM products");
 
-                            while (seeIfProductOnDB.next()) {
-                                if (productAddedID == seeIfProductOnDB.getInt("id")) {
-                                    controlProductAdded = false;
-                                    if (productAddedQuantity <= seeIfProductOnDB.getInt("quantity")) {
-                                        addProductOnCart(conn, productAddedID, productAddedQuantity);
-                                        break;
+                                while (seeIfProductOnDB.next()) {
+                                    if (productAddedID == seeIfProductOnDB.getInt("id")) {
+                                        controlProductAdded = false;
+                                        if (productAddedQuantity <= seeIfProductOnDB.getInt("quantity")) {
+                                            addProductOnCart(conn, productAddedID, productAddedQuantity);
+                                            break;
+                                        } else {
+                                            System.out.println("Product quantity higher then the available on Stock.");
+                                            break;
+                                        }
                                     } else {
-                                        System.out.println("Product quantity higher then the available on Stock.");
-                                        break;
+                                        controlProductAdded = true;
                                     }
-                                } else {
-                                    controlProductAdded = true;
                                 }
+                                if (controlProductAdded) {
+                                    System.out.println("Product ID Not Found.");
+                                }
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            } finally {
+                                DB.closeResultSet(seeIfProductOnDB);
                             }
-                            if (controlProductAdded) {
-                                System.out.println("Product ID Not Found.");
-                            }
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        } finally {
-                            DB.closeResultSet(seeIfProductOnDB);
+                        }
+                        else{
+                            System.out.println("Quantity must be higher them 0!");
                         }
                         break;
 

@@ -142,14 +142,18 @@ public class modifyItemOnDB {
             if(checkIfProductExists(conn, id)){
                 System.out.println("Insert the product quantity you want to add: ");
                 int quantity = sc.nextInt();
-                if(checkIfQuantityMatchsIncrease(conn, id, quantity)){
-                    increaseProductOnDB(conn, id, quantity);
-                    System.out.println("Added "+ quantity + " to the product successfully!");
+                if(quantity>0) {
+                    if (checkIfQuantityMatchsIncrease(conn, id, quantity)) {
+                        increaseProductOnDB(conn, id, quantity);
+                        System.out.println("Added " + quantity + " to the product successfully!");
+                    } else {
+                        System.out.println("Quantity added would reduce quantity to negative number."
+                                + "\nInsert a valid value."
+                        );
+                    }
                 }
                 else{
-                    System.out.println("Quantity added would reduce quantity to negative number."
-                            + "\nInsert a valid value."
-                    );
+                    System.out.println("Quantity must be higher them 0!");
                 }
             }
             else{
@@ -162,14 +166,18 @@ public class modifyItemOnDB {
             if(checkIfProductExists(conn, id)){
                 System.out.println("Insert the product quantity you want to decrease: ");
                 int quantity = sc.nextInt();
-                if(checkIfQuantityMatchsDecrease(conn, id, quantity)){
-                    decreaseProductOnDB(conn, id, quantity);
-                    System.out.println("Removed "+ quantity + " to the product successfully!");
+                if(quantity>0) {
+                    if (checkIfQuantityMatchsDecrease(conn, id, quantity)) {
+                        decreaseProductOnDB(conn, id, quantity);
+                        System.out.println("Removed " + quantity + " to the product successfully!");
+                    } else {
+                        System.out.println("Quantity added would reduce quantity to negative number."
+                                + "\nInsert a valid value."
+                        );
+                    }
                 }
                 else{
-                    System.out.println("Quantity added would reduce quantity to negative number."
-                            + "\nInsert a valid value."
-                    );
+                    System.out.println("Quantity must be higher them 0!");
                 }
             }
             else{

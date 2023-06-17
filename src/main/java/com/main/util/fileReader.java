@@ -7,13 +7,13 @@ import java.io.IOException;
 public class fileReader {
 
     public static String fileReader() {
-        String filePath = "schema_control.sql"; // Substitua pelo caminho do arquivo que deseja ler
+        String filePath = "schema_control.sql";
         StringBuilder queryCreation = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                 queryCreation.append(line).append(" ");// Faça algo com cada linha lida, neste exemplo, apenas imprimimos no console
+                 queryCreation.append(line).append(" ");
             }
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());

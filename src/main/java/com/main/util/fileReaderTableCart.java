@@ -8,11 +8,11 @@ public class fileReaderTableCart {
 
     public static String fileReaderTableCart() {
         StringBuilder queryTableCreation = new StringBuilder();
-        String filePath = "table_cart_creation.sql"; // Substitua pelo caminho do arquivo que deseja ler
+        String filePath = "table_cart_creation.sql";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                queryTableCreation.append(line).append(" ");// Faça algo com cada linha lida, neste exemplo, apenas imprimimos no console
+                queryTableCreation.append(line).append(" ");
             }
         }
         catch (IOException e) {

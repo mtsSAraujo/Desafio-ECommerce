@@ -184,12 +184,16 @@ public class modifyCart {
             if(checkIfProductsOnCart(conn, id)){
                 System.out.println("Insert the product quantity you want to add: ");
                 int quantity = sc.nextInt();
-                if(compareQuantityToCartIncrease(conn,id, quantity)){
-                    increaseProductsOnCart(conn, id, quantity);
-                    System.out.println("Added "+ quantity + " to the product successfully!");
+                if (quantity>0) {
+                    if (compareQuantityToCartIncrease(conn, id, quantity)) {
+                        increaseProductsOnCart(conn, id, quantity);
+                        System.out.println("Added " + quantity + " to the product successfully!");
+                    } else {
+                        System.out.println("Quantity added would surpass stock availability.");
+                    }
                 }
                 else{
-                    System.out.println("Quantity added would surpass stock availability.");
+                    System.out.println("Quantity must be higher them 0!");
                 }
             }
             else{
@@ -202,14 +206,18 @@ public class modifyCart {
             if(checkIfProductsOnCart(conn, id)){
                 System.out.println("Insert the product quantity you want to decrease: ");
                 int quantity = sc.nextInt();
-                if(compareQuantityToCartDecrease(conn, id, quantity)){
-                    decreaseProductsOnCart(conn, id, quantity);
-                    System.out.println("Removed "+ quantity + " to the product successfully!");
+                if(quantity>0) {
+                    if (compareQuantityToCartDecrease(conn, id, quantity)) {
+                        decreaseProductsOnCart(conn, id, quantity);
+                        System.out.println("Removed " + quantity + " to the product successfully!");
+                    } else {
+                        System.out.println("Quantity subtracted would reduce quantity in Cart to negative number."
+                                + "\nInsert a valid value."
+                        );
+                    }
                 }
                 else{
-                    System.out.println("Quantity subtracted would reduce quantity in Cart to negative number."
-                            + "\nInsert a valid value."
-                    );
+                    System.out.println("Quantity must be higher them 0!");
                 }
             }
             else{

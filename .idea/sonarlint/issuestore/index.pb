@@ -3,34 +3,14 @@
 ECommerce.iml,a\f\af2f26826957bb3e7408e26f5577f3f93b0b450e
 Z
 *src/main/java/db/DbIntegrityException.java,2\7\27f03c2931deef6fa0ff25ae8e64e70788393f51
-G
-table_cart_creation.sql,d\7\d70c1424215f6104a934c4d8254e7c56dcfbf559
-[
-+src/main/java/com/main/util/fileReader.java,c\3\c3c7147a2e805d032970717f9a4683f06cec85d9
-d
-4src/main/java/com/main/util/fileReaderTableCart.java,8\4\840742b79ba03c16bda49b6aa286981e739e06b1
-h
-8src/main/java/com/main/util/fileReaderTableProducts.java,f\7\f77a2c5e00557b1b25505f16e9967e9ab68aa69b
 K
 table_products_creation.sql,e\c\ecd8563dabb797e7100114108327b8f2373300e7
-B
-schema_control.sql,9\3\9388bd395c3c43e08b6f63fdbb6bd3ebc9b51d2a
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 H
 src/main/java/db/DB.java,8\7\873de590a22366477593b15a461ed3afa0172f42
-=
-db.properties,3\b\3b8c33088fa60dfa967fdedbf4c75fa52fdece9a
 X
 (src/main/java/db/cart/productsTotal.java,0\7\073b2c4e3028f16ca1e08e088bd1d7098ad7a23a
-W
-'src/main/java/db/controlDB/addOnDB.java,2\8\28fb7caa89ea660f31e07d34cb6ec3420c776bc6
-\
-,src/main/java/db/controlDB/removeFromDB.java,7\6\76edd7811a219e08dd60dc47868ece7e5bd6e5bd
 V
 &src/main/java/db/controlDB/showDB.java,d\2\d294b6b070e38b227ffef7c8cee87c2148e9afc2
-^
-.src/main/java/db/controlDB/modifyItemOnDB.java,b\d\bdeb30cb49d22543451f4721e7bba49da8d77e69
 `
 0src/main/java/db/cart/removeProductFromCart.java,3\0\3000f86532d9acd8fe948f91369f3984ed156e90
 S
