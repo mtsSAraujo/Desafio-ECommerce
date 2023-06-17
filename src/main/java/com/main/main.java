@@ -1,6 +1,7 @@
 package com.main;
 
 import db.DB;
+import db.dbAlreadyExistsException;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -44,14 +45,13 @@ public class main {
 
         }
         catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         finally {
             DB.closeStatement(insertTablesInDB);
             DB.closeStatement(insertValuesInDB);
             DB.closeStatement(insertTableCartInDB);
         }
-
 
         isCustomerOrEmployee(conn);
 

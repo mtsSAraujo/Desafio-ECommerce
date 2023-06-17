@@ -20,30 +20,50 @@ public class addProductOnCart {
         ResultSet rs = null;
         ResultSet productOnCart= null;
         Statement startProductOnCart = null;
+        ResultSet checkProductsTable = null;
+        Statement startProductsTable = null;
+
         int productOnCartID = 0;
+        boolean flagQuantityNotInStock = true;
         try{
 
             st = conn.createStatement();
             rs = st.executeQuery("Select * from products;");
             if(checkIfProductAlreadyOnCart(conn, id)){
+                String query = String.format("SELECT * FROM products where id = %s", id);
+                startProductsTable = conn.createStatement();
+                checkProductsTable = startProductsTable.executeQuery(query);
+                checkProductsTable.next();
+
                 startProductOnCart = conn.createStatement();
                 productOnCart = startProductOnCart.executeQuery("SELECT * FROM kart");
                 while(productOnCart.next()) {
                     if (productOnCart.getInt("fk_products") == id) {
                         productOnCartID = productOnCart.getInt("id");
+                        if (productOnCart.getInt("product_quantity") + quantity > checkProductsTable.getInt("quantity")){
+                            flagQuantityNotInStock = false;
+                            break;
+
+                        }
                     }
                 }
-                pst = conn.prepareStatement("UPDATE kart "
-                        + "SET product_quantity = product_quantity + ? "
-                        + "WHERE (id = ?)");
 
-                pst.setInt(1, quantity);
-                pst.setInt(2, productOnCartID);
-                pst.executeUpdate();
+                if(flagQuantityNotInStock) {
+                    pst = conn.prepareStatement("UPDATE kart "
+                            + "SET product_quantity = product_quantity + ? "
+                            + "WHERE (id = ?)");
 
-                System.out.println("Done! Since product was already on cart, we added the quantity there!");
+                    pst.setInt(1, quantity);
+                    pst.setInt(2, productOnCartID);
+                    pst.executeUpdate();
 
-                pst = null;
+                    System.out.println("Done! Since product was already on cart, we added the quantity there!");
+
+                    pst = null;
+                }
+                else{
+                    System.out.println("Product surpass the stock availability!");
+                }
             }
             else {
                 pst = conn.prepareStatement("INSERT INTO kart "
@@ -72,9 +92,12 @@ public class addProductOnCart {
             throw new dbException(e.getMessage());
         }
 
-        closeResultSet(rs);
-        closeStatement(pst);
-        closeStatement(st);
+        DB.closeResultSet(rs);
+        DB.closeStatement(pst);
+        DB.closeStatement(st);
+        DB.closeStatement(startProductsTable);
+        DB.closeResultSet(checkProductsTable);
+
     }
 
     public static boolean checkIfProductAlreadyOnCart(Connection conn, int id){
