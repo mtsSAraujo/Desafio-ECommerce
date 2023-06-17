@@ -2,7 +2,7 @@
 
 ## Tecnologias utilizadas
 
-O projeto foi feito utilizando JAVA puro, com conexão ao banco de dados (MySQL) atráves da JDBC.
+O projeto foi feito utilizando Java(versão 20.0.1), com conexão ao banco de dados (MySQL) atráves da JDBC.
 
 ## Sobre o projeto
 
@@ -15,18 +15,6 @@ Nesse projeto, tudo acontecerá atráves do terminal da IDE, de modo que, para i
 Clone o repositório:
 
 git clone : https://github.com/mtsSAraujo/Desafio-ECommerce.git
-
-instale os pacotes:
-
-npm install
-
-É necessário instalar o Java connector e adiciona-lo a aba de "External Libraries";
-
-O link para download é:
-
-https://downloads.mysql.com/archives/c-j/
-
-O programa possui na sua main toda a logica para criar e popular o banco de dados quando iniciado, o usuário precisa apenas iniciar o MySQL e executar o programa a partir da main.
 
 Em caso de erro ao popular o banco, é necessario que o usuário acesse o arquivo "db.properties" e altera o nome do banco de dados para que este nao entre em conflito com algum banco ja existente.
 O arquivo "db.properties" possui o seguinte formato:
@@ -53,3 +41,5 @@ Desse modo, o novo nome ficará:
 "dburl=jdbc:mysql://localhost:3306/(nome escolhido)";
 
 Além disso, deve-se criar uma conexão ao MySQL e, se necessário, alterar os campos "user" e "password" de modo que estes alinhem ao do seu próprio MySQL.
+
+O programa possui na sua main toda a logica para criar e popular o banco de dados quando iniciado, o usuário precisa apenas iniciar o MySQL e executar o programa a partir da main.
