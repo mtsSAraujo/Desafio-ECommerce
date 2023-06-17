@@ -109,7 +109,7 @@ public class isCustomer {
                     break;
 
                 case 5:
-                    showDB(st);
+                    showCart(st);
                     System.out.println(new StringBuilder().append("Would you like to increase or decrease ").append("the quantity of products?\n").append("1 - Increase \n2 - Decrease").toString());
                     int increaseOrDecreaseCart = sc.nextInt();
                     increaseOrDecreaseOnCart(conn, increaseOrDecreaseCart);

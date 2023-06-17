@@ -23,3 +23,7 @@ B
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 H
 src/main/java/db/DB.java,8\7\873de590a22366477593b15a461ed3afa0172f42
+=
+db.properties,3\b\3b8c33088fa60dfa967fdedbf4c75fa52fdece9a
+X
+(src/main/java/db/cart/productsTotal.java,0\7\073b2c4e3028f16ca1e08e088bd1d7098ad7a23a
