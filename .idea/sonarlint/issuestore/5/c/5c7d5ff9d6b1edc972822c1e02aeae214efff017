@@ -1,0 +1,29 @@
+
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ñÃ³¤ıÿÿÿÿ8Û ö­Œ1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ñÃ³¤ıÿÿÿÿ8ù¡ö­Œ1
+n
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ÅÅÎ8ù¡ö­Œ1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(êÀŸ¾üÿÿÿÿ8ú¡ö­Œ1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ï‹äşÿÿÿÿ8ú¡ö­Œ1
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(º™Ôøÿÿÿÿ8ú¡ö­Œ1
+U	java:S106!"9Replace this use of System.out or System.err by a logger.(“Á‚Õ8ú¡ö­Œ1
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(®œ³şûÿÿÿÿ8ú¡ö­Œ1
+Z	java:S106#"9Replace this use of System.out or System.err by a logger.(ü«ä×ùÿÿÿÿ8û¡ö­Œ1
+U	java:S106&"9Replace this use of System.out or System.err by a logger.(¦¯Å¢8ı¡ö­Œ1
+Z	java:S106."9Replace this use of System.out or System.err by a logger.(€›÷şÿÿÿÿÿ8ı¡ö­Œ1
+U	java:S106="9Replace this use of System.out or System.err by a logger.(œ³€„8ş¡ö­Œ1
+U	java:S106O"9Replace this use of System.out or System.err by a logger.(ªå£Ï8ş¡ö­Œ1
+Z	java:S106\"9Replace this use of System.out or System.err by a logger.(±Ú¿úÿÿÿÿ8ÿ¡ö­Œ1
+Z	java:S106f"9Replace this use of System.out or System.err by a logger.(»ûëÍùÿÿÿÿ8€¢ö­Œ1
+Z	java:S106l"9Replace this use of System.out or System.err by a logger.(êÀŸ¾üÿÿÿÿ8€¢ö­Œ1
+Z	java:S106m"9Replace this use of System.out or System.err by a logger.(Ï‹äşÿÿÿÿ8€¢ö­Œ1
+Z	java:S106n"9Replace this use of System.out or System.err by a logger.(º™Ôøÿÿÿÿ8€¢ö­Œ1
+U	java:S106o"9Replace this use of System.out or System.err by a logger.(“Á‚Õ8€¢ö­Œ1
+Z	java:S106p"9Replace this use of System.out or System.err by a logger.(®œ³şûÿÿÿÿ8€¢ö­Œ1
+Z	java:S106q"9Replace this use of System.out or System.err by a logger.(ü«ä×ùÿÿÿÿ8€¢ö­Œ1
+U	java:S106s"9Replace this use of System.out or System.err by a logger.(¦¯Å¢8€¢ö­Œ1
+Y
+java:S1128"7Remove this unused import 'javax.xml.transform.Result'.(âÓ¸ûÿÿÿÿ8ÉÏ©®Œ1
+g
+java:S1128"JRemove this unused import 'db.controlDB.removeFromDB.removeProductFromDB'.(šŞ›‹8ÉÏ©®Œ1

@@ -15,8 +15,6 @@ K
 table_products_creation.sql,e\c\ecd8563dabb797e7100114108327b8f2373300e7
 B
 schema_control.sql,9\3\9388bd395c3c43e08b6f63fdbb6bd3ebc9b51d2a
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 H
@@ -25,3 +23,19 @@ H
 db.properties,3\b\3b8c33088fa60dfa967fdedbf4c75fa52fdece9a
 X
 (src/main/java/db/cart/productsTotal.java,0\7\073b2c4e3028f16ca1e08e088bd1d7098ad7a23a
+W
+'src/main/java/db/controlDB/addOnDB.java,2\8\28fb7caa89ea660f31e07d34cb6ec3420c776bc6
+\
+,src/main/java/db/controlDB/removeFromDB.java,7\6\76edd7811a219e08dd60dc47868ece7e5bd6e5bd
+V
+&src/main/java/db/controlDB/showDB.java,d\2\d294b6b070e38b227ffef7c8cee87c2148e9afc2
+Z
+*src/main/java/org/employee/isEmployee.java,5\c\5c7d5ff9d6b1edc972822c1e02aeae214efff017
+^
+.src/main/java/db/controlDB/modifyItemOnDB.java,b\d\bdeb30cb49d22543451f4721e7bba49da8d77e69
+`
+0src/main/java/db/cart/removeProductFromCart.java,3\0\3000f86532d9acd8fe948f91369f3984ed156e90
+S
+#src/main/java/db/cart/showCart.java,8\9\89a0a131c77c887092aeba26d7c64f5b025cdc6f
+Z
+*src/main/java/org/customer/isCustomer.java,5\e\5e32ae5fad25c04b9fc00fd2933781c889758ba4
