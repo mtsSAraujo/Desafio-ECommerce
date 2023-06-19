@@ -33,13 +33,22 @@ public class addOnDB {
                 System.out.println("Insert the product quantity: ");
                 int quantity = sc.nextInt();
                 st.setInt(3, quantity);
+                if(quantity>=0 && product_price>=0){
+                    int rowsAffected = st.executeUpdate();
+                    System.out.println("Done! Products added: " + rowsAffected);
+                }
+                else{
+                    if(product_price<0){
+                        System.out.println("Price must be a positive number!");
+                    }
+                    else{
+                        System.out.println("Quantity must be a positive number!");
+                    }
+                }
                 System.out.println("Do you wish to add another product?"
-                    + "\n1 - Yes \n2 - No");
+                        + "\n1 - Yes \n2 - No");
                 cont = sc.nextInt();
-
             }
-            int rowsAffected = st.executeUpdate();
-            System.out.println("Done! Products added: " + rowsAffected);
         }
         catch (SQLException e){
             throw new dbException(e.getMessage());

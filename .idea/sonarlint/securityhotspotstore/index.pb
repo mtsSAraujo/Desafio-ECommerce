@@ -29,8 +29,6 @@ h
 +src/main/java/com/main/util/fileReader.java,c\3\c3c7147a2e805d032970717f9a4683f06cec85d9
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-W
-'src/main/java/db/controlDB/addOnDB.java,2\8\28fb7caa89ea660f31e07d34cb6ec3420c776bc6
 \
 ,src/main/java/db/controlDB/removeFromDB.java,7\6\76edd7811a219e08dd60dc47868ece7e5bd6e5bd
 ^
@@ -39,5 +37,3 @@ B
 schema_control.sql,9\3\9388bd395c3c43e08b6f63fdbb6bd3ebc9b51d2a
 G
 table_cart_creation.sql,d\7\d70c1424215f6104a934c4d8254e7c56dcfbf559
-Z
-*src/main/java/org/employee/isEmployee.java,5\c\5c7d5ff9d6b1edc972822c1e02aeae214efff017
