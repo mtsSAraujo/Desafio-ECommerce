@@ -11,7 +11,21 @@ X
 (src/main/java/db/cart/productsTotal.java,0\7\073b2c4e3028f16ca1e08e088bd1d7098ad7a23a
 V
 &src/main/java/db/controlDB/showDB.java,d\2\d294b6b070e38b227ffef7c8cee87c2148e9afc2
-`
-0src/main/java/db/cart/removeProductFromCart.java,3\0\3000f86532d9acd8fe948f91369f3984ed156e90
 S
 #src/main/java/db/cart/showCart.java,8\9\89a0a131c77c887092aeba26d7c64f5b025cdc6f
+^
+.src/main/java/db/dbAlreadyExistsException.java,c\4\c412bfb412f5575deacbdf68517a4851161bbc25
+Q
+!src/main/java/db/dbException.java,7\9\797788256014b2b1449ebd7410704cbc5930f01a
+[
++src/main/java/db/cart/addProductOnCart.java,a\e\ae0f7aa19f89a3e28413a245dfb6b4c6ae625a9a
+d
+4src/main/java/org/customer/purchaseConfirmation.java,2\4\24704179dbfb0c550f05031d14405a2cf6dbc358
+d
+4src/main/java/com/main/util/fileReaderTableCart.java,8\4\840742b79ba03c16bda49b6aa286981e739e06b1
+h
+8src/main/java/com/main/util/fileReaderTableProducts.java,f\7\f77a2c5e00557b1b25505f16e9967e9ab68aa69b
+[
++src/main/java/com/main/util/fileReader.java,c\3\c3c7147a2e805d032970717f9a4683f06cec85d9
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

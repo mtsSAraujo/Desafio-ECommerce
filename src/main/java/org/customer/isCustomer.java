@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 import static db.DB.closeStatement;
 import static db.cart.addProductOnCart.addProductOnCart;
+import static db.cart.modifyCart.checkIfProductsOnCart;
 import static db.cart.modifyCart.increaseOrDecreaseOnCart;
 import static db.cart.removeProductFromCart.removeProductFromCart;
 import static db.cart.showCart.showCart;
@@ -102,7 +103,12 @@ public class isCustomer {
                         showCart(st);
                         System.out.println("Insert the ID of a product to be removed: ");
                         int idRemoved = sc.nextInt();
-                        removeProductFromCart(conn, idRemoved);
+                        if(checkIfProductsOnCart(conn, idRemoved)) {
+                            removeProductFromCart(conn, idRemoved);
+                        }
+                        else{
+                            System.out.println("Insert a valid ID to be removed!");
+                        }
                         break;
 
                     case 4:
