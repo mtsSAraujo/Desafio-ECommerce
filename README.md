@@ -21,7 +21,7 @@ user = default
 
 password = 12345678
 
-dburl=jdbc:mysql://localhost:3306/products
+dburl=jdbc:mysql://localhost:3306/products?allowPublicKeyRetrieval=true
 
 createDatabaseIfNotExist=true
 
