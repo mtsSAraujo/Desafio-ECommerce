@@ -1,45 +1,44 @@
-# Desafio-ECommerce
+# ECommerce Challenge
+Used Technologies
+The project was developed using Java (version 20.0.1) with a database connection (MySQL) through JDBC.
 
-## Tecnologias utilizadas
 
-O projeto foi feito utilizando Java(versão 20.0.1), com conexão ao banco de dados (MySQL) atráves da JDBC.
+## About the project
+The project consists of a shopping cart implemented using JAVA and a database tool (MySQL or MongoDB).
 
-## Sobre o projeto
 
-O projeto consiste em um carrinho de compras feito utilizando JAVA e alguma ferramenta de banco de dados (MySQL ou MongoDB);
+In this project, everything happens through the IDE terminal, so in order to interact, the user needs to follow the steps specified in the prompt.
 
-Nesse projeto, tudo acontecerá atráves do terminal da IDE, de modo que, para interagir, o usuário precisa seguir os passos especificados no prompt.
+## How to run the program
+Clone the repository:
 
-## Como rodar o programa
+git clone: https://github.com/mtsSAraujo/Desafio-ECommerce.git
 
-Clone o repositório:
+In case of an error while populating the database, it is necessary for the user to access the "db.properties" file and change the name of the database to avoid conflicts with any existing database.
+The "db.properties" file has the following format:
 
-git clone : https://github.com/mtsSAraujo/Desafio-ECommerce.git
+user = default
 
-Em caso de erro ao popular o banco, é necessario que o usuário acesse o arquivo "db.properties" e altera o nome do banco de dados para que este nao entre em conflito com algum banco ja existente.
-O arquivo "db.properties" possui o seguinte formato:
+password = 12345678
 
-#### user = default
+dburl=jdbc:mysql://localhost:3306/products
 
-#### password = 12345678
+createDatabaseIfNotExist=true
 
-#### dburl=jdbc:mysql://localhost:3306/products
+useSSL=false
 
-#### createDatabaseIfNotExist=true
+--------------------------------------------------------------------------------------
 
-#### useSSL=false 
----------------------------------------------------------------------------
+If necessary, the user should modify the field:
 
-Se necessário, o usuário deverá alterar o campo: 
+"dburl=jdbc:mysql://localhost:3306/products";
 
-"dburl=jdbc:mysql://localhost:3306/products"; 
+Where "products" refers to the name of the database.
 
-Onde products refere-se ao nome do banco de dados.
+Thus, the new name will be:
 
-Desse modo, o novo nome ficará: 
+"dburl=jdbc:mysql://localhost:3306/(chosen name)";
 
-"dburl=jdbc:mysql://localhost:3306/(nome escolhido)";
+Additionally, a connection to MySQL should be created, and if necessary, the "user" and "password" fields should be modified to match those of your own MySQL.
 
-Além disso, deve-se criar uma conexão ao MySQL e, se necessário, alterar os campos "user" e "password" de modo que estes alinhem ao do seu próprio MySQL.
-
-O programa possui na sua main toda a logica para criar e popular o banco de dados quando iniciado, o usuário precisa apenas iniciar o MySQL e executar o programa a partir da main.
+The program contains all the logic in its main method to create and populate the database upon initialization. The user only needs to start MySQL and execute the program from the main method.
