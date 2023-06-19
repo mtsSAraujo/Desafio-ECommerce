@@ -31,14 +31,17 @@ useSSL=false
 
 If necessary, the user should modify the field:
 
-"dburl=jdbc:mysql://localhost:3306/products";
+"dburl=jdbc:mysql://localhost:3306/products?allowPublicKeyRetrieval=true";
 
 Where "products" refers to the name of the database.
 
 Thus, the new name will be:
 
-"dburl=jdbc:mysql://localhost:3306/(chosen name)";
+"dburl=jdbc:mysql://localhost:3306/(chosen name)?allowPublicKeyRetrieval=true";
 
 Additionally, a connection to MySQL should be created, and if necessary, the "user" and "password" fields should be modified to match those of your own MySQL.
 
 The program contains all the logic in its main method to create and populate the database upon initialization. The user only needs to start MySQL and execute the program from the main method.
+
+If you wish to restart the DB, you need to drop the Schema on your "MySQL WorkBench", just go to your coonection and drop the DB the program created.
+Once you restart the app, it will generate another DB for you with the same name and all the products it had on the start!
