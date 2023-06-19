@@ -14,6 +14,8 @@ Clone the repository:
 
 git clone: https://github.com/mtsSAraujo/Desafio-ECommerce.git
 
+you will need a dependency for connecting your DB with the application, which is being provided by Maven on the .pom file!
+
 In case of an error while populating the database, it is necessary for the user to access the "db.properties" file and change the name of the database to avoid conflicts with any existing database.
 The "db.properties" file has the following format:
 
